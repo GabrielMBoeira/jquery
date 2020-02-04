@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+
+    <script>
+        //conteudo1
+        $('#conteudo1').append('<p>1</p>')
+
+        //conteudo2
+        const elementos = [
+            $('<li>').append('Arroz'), //OBS> jQuery para selecionar elemento -> $('li') jQuery para criar elementos -> $('<li>')
+            $('<li>').append('Feijão'),
+            $('<li>').append('Carne')
+        ]
+
+        const lista = $('<ul><li>Sorvete</li></ul>').append(elementos)
+        $('#conteudo2').append(lista) // AGORA SIM ESTÁ INCLUINDO NA DOM 
+
+        //conteudo3
+
+        $('#conteudo3').append(['<h1>1', '<h2>2']).prepend('<h1>0') //vai adicionando elementos dentro de outro
+        
+        $('#conteudo3').html('<h1>123') //substitui elementos neste caso todos elementos do #conteudo3
+
+        $('#conteudo3').text('somente texto') //add somente texto não leva em consideração as tags
+
+        $('div[id]').html('<strong>TODOS</strong>')
+
+
+    </script>
+</body>
